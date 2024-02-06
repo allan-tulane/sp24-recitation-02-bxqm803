@@ -44,7 +44,7 @@ where $W(1) = 1$.
 
 **TODO: your answer goes here**
 [(10, 9144, 1134), (20, 154304, 9134), (50, 4520152, 142597), (100, 73322432, 1142597), (1000, 395237250560, 1142849990), (5000, 603868118744576, 142856974901), (10000, 9662889899913216, 1142856974901)]
-the result show that the value when n^c<log_b(a) is larger than the value when n^c>log_b(a) 
+the result show that the value when n^c<log_b(a), it's leaf dominated. The time complexity is O(n^log_b(a))=O(n^4), which is larger than the value when n^c>log_b(a).It's root dominated, the time complexity is n^3
 
 - [ ] 6. (3 points) $W(n)$ is meant to represent the running time of some recursive algorithm. Suppose we always had $a$ processors available to us and we wanted to compute the span of the same algorithm. Implement the function `span_calc` to compute the empirical span, where the work of the algorithm is given by $W(n)$. Implement `test_compare_span` to create a new comparison function for comparing span functions. Derive the asymptotic expressions for the span of the recurrences you used in problem 4 above. Confirm that everything matches up as it should. 
 
@@ -52,7 +52,9 @@ the result show that the value when n^c<log_b(a) is larger than the value when n
 [(10, 15, 36, 19), (20, 31, 92, 42), (50, 63, 276, 89), (100, 127, 652, 184), (1000, 1023, 9120, 1525), (5000, 8191, 61728, 12274), (10000, 16383, 133456, 24561)]
 the result show that when f(n)=n. the value is the largest and when f(n)=1 the value is the smallest.
 
-for time span [(10, 5.9604644775390625, 2.1457672119140625, 11.920928955078125), (20, 1.9073486328125, 1.430511474609375, 3.5762786865234375), (50, 1.6689300537109375, 2.384185791015625, 3.814697265625), (100, 2.1457672119140625, 2.384185791015625, 4.5299530029296875), (1000, 9.298324584960938, 3.5762786865234375, 6.9141387939453125), (5000, 4.5299530029296875, 4.5299530029296875, 8.821487426757812), (10000, 4.5299530029296875, 4.5299530029296875, 8.821487426757812)]
-when f(n)=logn it take longest time.
+for time span with a=2, b=2 [(10, 3.5762786865234375, 1.6689300537109375, 8.344650268554688), (20, 1.6689300537109375, 1.430511474609375, 2.6226043701171875), (50, 1.6689300537109375, 1.9073486328125, 3.337860107421875), (100, 2.1457672119140625, 1.9073486328125, 4.0531158447265625), (1000, 8.106231689453125, 3.337860107421875, 6.4373016357421875), (5000, 4.0531158447265625, 4.5299530029296875, 8.344650268554688), (10000, 4.5299530029296875, 4.0531158447265625, 8.821487426757812)]
+when f(n)=1, c=0 it's leaf-dominated. time complexity is O(n)
+when f(n)=n, it's balanced, time complexity is O(nlogn)
+when f(n)=logn, time complexity is O(logn)
 
 

@@ -98,5 +98,3 @@ def compare_span(span_fn1,
     # compute W(n) using current a, b, f
     result.append((n, span_fn1(n), span_fn2(n),span_fn3(n)))
   return result
-
-
